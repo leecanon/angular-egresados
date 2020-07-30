@@ -1,0 +1,98 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>BizPage Bootstrap Template</title>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta content="" name="keywords">
+  <meta content="" name="description">
+
+  <!-- Favicons -->
+  <link href="img/favicon.png" rel="icon">
+  <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Montserrat:300,400,500,700" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <header id="header">
+    <div class="container-fluid">
+
+      <div id="logo" class="pull-left">
+        <h1><a [routerLink]="['/home']" class="scrollto">Egresados UPeU</a></h1>
+      </div>
+
+      <nav id="nav-menu-container">
+        <ul class="nav-menu">
+          <li class="menu-active"><a [routerLink]="['/inicio']">Inicio</a></li>
+          <li><a [routerLink]="['/eventos']">Actividades</a></li>
+          <li><a [routerLink]="['/inicio']">Ofertas de Empleo</a></li>
+          <li><a [routerLink]="['/login']" *ngIf="!identity">Ingresar</a></li>
+          <li><a [routerLink]="['/register']" *ngIf="!identity">Registrarse</a></li>
+
+
+          <li class="menu-has-children"><a [routerLink]="['/profile']" *ngIf="identity">{{ identity.name + ' ' + identity.surname }}</a>
+            <ul>
+              <li><a href="#">MIAU</a></li>
+              <li><a href="#">GUAU</a></li>
+              <li><a href="#">AEA</a></li>
+              <li><a [routerLink]="['/logout/1']" *ngIf="identity">Salir</a></li>
+            </ul>
+          </li>
+        </ul>
+
+      </nav><
+    </div>
+  </header>
+
+
+</body>
+
+
+<!--
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="header">
+
+  <!--
+    <a class="navbar-brand" [routerLink]="['/inicio']">
+      <img src="../../../assets/Logo_upeu.svg" width="100%" height="30" class="d-inline-block align-top" alt="Egresados UpeU">
+    </a>
+  -->
+
+  <!--
+
+
+<div id="logo" class="pull-left">
+  <h1><a [routerLink]="['/home']" class="scrollto">Egresados UPeU</a></h1>
+</div>
+
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="toggler">
+    <span class="navbar-toggler-icon" id="toggler_icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="nav-menu-container">
+
+    <ul class="nav-menu">
+      <li class="menu-active"><a [routerLink]="['/inicio']">Inicio</a></li>
+      <li><a [routerLink]="['/eventos']">Actividades</a></li>
+      <li><a [routerLink]="['/inicio']">Ofertas de Empleo</a></li>
+      <li><a [routerLink]="['/login']">Ingresar</a></li>
+      <li><a [routerLink]="['/register']">Registrarse</a></li>
+      <li class="menu-has-children"><a href="">Algo más xd</a>
+        <ul>
+          <li><a href="#">MIAU</a></li>
+          <li><a href="#">GUAU</a></li>
+          <li><a href="#">AEA</a></li>
+          <li><a href="#">CTMRE</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+-->

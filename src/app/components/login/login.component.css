@@ -1,0 +1,27 @@
+#izq{
+
+  z-index: 1000;
+}
+#der{
+  z-index: 1000;
+  margin-top: 3.5rem;
+  margin-left: 18rem;
+  position: fixed;
+  overflow: auto;
+}
+.principal{
+  padding: 1rem;
+  text-align: center;
+}
+#formulario_x{
+  margin: auto;
+}
+
+.alert .alert-success{
+  animation-duration: 2s;
+  transition-duration: 2s;
+}
+.alert .alert-danger{
+  animation-duration: 2s;
+  transition-duration: 2s;
+}

@@ -1,0 +1,44 @@
+<app-navbar></app-navbar>
+
+
+<div id="general" *ngIf="car">
+
+  <div class="col-lg-6" id="div_title">
+    <div id="div_title_text">
+      <h1>{{car.title}}</h1>
+    </div>
+  </div>
+
+  <div class="col-lg-6" id="div_content">
+    <div id="div_content_form">
+      <h2>Sobre este curso</h2>
+      <br><br><hr>
+      <h3>Disponibilidad</h3>
+      <p><strong *ngIf="car.status == 'true'">Este curso está disponible </strong></p>
+      <p><strong *ngIf="car.status == 'false'">Este curso no está disponible </strong></p>
+      <hr>
+      <h3>Precio</h3>
+      <p>{{car.price}} $</p>
+      <hr>
+      <h3>Descripción</h3>
+      <p>{{car.description}}</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+<div class="col-md-12" *ngIf="car">
+    <h1>{{car.title}} </h1>
+    <p><strong *ngIf="car.status == 'true'">este curso esta disponible </strong></p>
+    <p>
+        {{car.price}} $
+    </p>
+    <p>
+        {{car.description}}
+    </p>
+
+</div>

@@ -1,0 +1,24 @@
+#contenedor_pag{
+  padding: 2em;
+}
+
+#div_1_1{
+  float: left;
+}
+#div_1_2{
+  float: left;
+}
+#div_2{
+  float: left;
+  width: 100%;
+}
+
+@media (max-width: 960px){
+  #div_1{
+    margin-bottom: 2em;
+  }
+  #div_1_1{
+    text-align: center;
+    margin-bottom: 1em;
+  }
+}

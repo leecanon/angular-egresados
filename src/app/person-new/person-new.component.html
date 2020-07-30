@@ -1,0 +1,76 @@
+<app-navbar></app-navbar>
+
+<div class="alert alert-success"*ngIf="status_personas =='success'">
+   Datos Personales  se ha guardado correctamtente!!
+  </div>
+
+<div class="alert alert-danger"*ngIf="status_personas =='error'">
+  Datos Personales no se ha guardado correctamtente, intenta de Nuevo!!
+</div>
+
+<div id="general">
+
+  <div class="col-lg-6" id="div_title">
+    <div id="div_title_text">
+      <h1>Crear ¿NUEVA PERSONA?</h1>
+      <h1>El menú dice:</h1>
+      <h1>"DATOS PERSONALES"</h1>
+      <h1>Y REDIRECCIONA AQUÍ</h1>
+    </div>
+  </div>
+
+  <div class="col-lg-6" id="div_content">
+    <div id="div_content_form">
+      <form #personNew="ngForm" (ngSubmit)="onSubmit(personNew)">
+        <p>
+          <label for="title"> Numero Celular</label>
+          <input type="text" name="persona_cel" #persona_cel="ngModel" [(ngModel)]="personas.persona_cel" class="form-control" required/>
+          <span *ngIf="!persona_cel.valid && persona_cel.touched">
+            Número de celular  no es válido o es incorrecto
+          </span>
+        </p>
+
+        <p>
+          <label for="title"> Sexo</label>
+          <input type="text" name="persona_genero" #persona_genero="ngModel" [(ngModel)]="personas.persona_genero" class="form-control" required/>
+          <span *ngIf="!persona_genero.valid && persona_genero.touched">
+            ¿Cuál es tu género?
+          </span>
+        </p>
+
+        <p>
+          <label for="title"> DNI</label>
+          <input type="text" name="persona_dni" #persona_dni="ngModel" [(ngModel)]="personas.persona_dni" class="form-control"
+          required/>
+          <span *ngIf="!persona_dni.valid && persona_dni.touched">
+            Ingresa tu DNI
+          </span>
+        </p>
+
+        <p>
+          <label for="description"> Descripcion</label>
+          <textarea  name="description" #description="ngModel" [(ngModel)]="personas.description" class="form-control"
+          required></textarea>
+          <span *ngIf="!description.valid && description.touched">
+            ¿Tu descripción?
+          </span>
+        </p>
+
+        <p>
+          <label for="status">Disponibilidad</label>
+          <select class="form-control" name="status" #status="ngModel"[(ngModel)]="personas.status"required>
+            <option value="true" selected="select">Si</option>
+            <option value="false">No</option>
+          </select>
+        </p>
+
+        <input type="submit" value="Guardar" class="btn btn-success" [disabled]="!personNew.form.valid"  />
+      </form>
+    </div>
+  </div>
+</div>
+
+
+
+
+

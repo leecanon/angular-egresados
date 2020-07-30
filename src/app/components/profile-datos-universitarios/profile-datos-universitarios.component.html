@@ -1,0 +1,86 @@
+<div class="col-md-12">
+
+  <div class="alert alert-success"*ngIf="status_fichaegresos =='success'">
+     Datos Personales  se ha guardado correctamtente!!
+
+  </div>
+
+  <div class="alert alert-danger"*ngIf="status_fichaegresos =='error'">
+      Datos Personales no se ha guardado correctamtente, intenta de Nuevo!!
+
+  </div>
+
+  <form #fichaNew="ngForm" (ngSubmit)="onSubmit(fichaNew)">
+    <div class="col-lg-6" id="form_der">
+      <p>
+          <label for="title"> Nombre Carrera</label>
+          <input type="text" name="fichaegreso_carreranombre" #fichaegreso_carreranombre="ngModel" [(ngModel)]="fichaegresos.fichaegreso_carreranombre" class="form-control"
+          required/>
+          <span *ngIf="!fichaegreso_carreranombre.valid && fichaegreso_carreranombre.touched">
+              No existe Ese Lugar che!!
+
+          </span>
+
+      </p>
+
+      <p>
+        <label for="title"> Nombre Facultad</label>
+        <input type="text" name="fichaegreso_facultad" #fichaegreso_facultad="ngModel" [(ngModel)]="fichaegresos.fichaegreso_facultad" class="form-control"
+        required/>
+        <span *ngIf="!fichaegreso_facultad.valid && fichaegreso_facultad.touched">
+            Que desenpeño Ingrese!!
+
+        </span>
+
+    </p>
+    </div>
+
+
+
+    <div class="col-lg-6" id="form_izq">
+      <p>
+        <label for="title"> Fecha Ingreso</label>
+        <input type="date" name="fichaegreso_fechaInicio" #fichaegreso_fechaInicio="ngModel" [(ngModel)]="fichaegresos.fichaegreso_fechaInicio" class="form-control"
+        required/>
+        <span *ngIf="!fichaegreso_fechaInicio.valid && fichaegreso_fechaInicio.touched">
+            Ingrese Fecha!!
+
+        </span>
+
+    </p>
+    <p>
+        <label for="title"> Fecha Culminasion de Estudio</label>
+        <input type="date" name="fichaegreso_fechatermino" #fichaegreso_fechatermino="ngModel" [(ngModel)]="fichaegresos.fichaegreso_fechatermino" class="form-control"
+        required/>
+        <span *ngIf="!fichaegreso_fechatermino.valid && fichaegreso_fechatermino.touched">
+            el numero cel  no es valido o numero incorrecto
+
+        </span>
+
+    </p>
+
+    <p>
+        <label for="status"> ¿Sigue Estudiando?</label>
+        <select class="form-control" name="status" #status="ngModel"[(ngModel)]="fichaegresos.status"required>
+            <option value="true" selected="select">Si</option>
+            <option value="false">No</option>
+        </select>
+
+    </p>
+
+    </div>
+
+
+
+    <div class="col-lg-12" id="form_button">
+      <input type="submit" value="Guardar" class="btn btn-success" [disabled]="!fichaNew.form.valid"  />
+
+    </div>
+
+
+  </form>
+
+</div>
+
+
+

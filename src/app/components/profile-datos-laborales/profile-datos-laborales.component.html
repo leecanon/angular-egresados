@@ -1,0 +1,90 @@
+<div class="alert alert-success"*ngIf="status_hojavidas =='success'">
+  Datos Personales  se ha guardado correctamtente!!
+
+</div>
+
+<div class="alert alert-danger"*ngIf="status_hojavidas =='error'">
+   Datos Personales no se ha guardado correctamtente, intenta de Nuevo!!
+
+</div>
+
+<form #hojaNew="ngForm" (ngSubmit)="onSubmit(hojaNew)">
+  <div class="col-lg-6" id="form_der">
+    <p>
+        <label for="title"> Lugar donde trabajo</label>
+        <input type="text" name="hojavida_lugar" #hojavida_lugar="ngModel" [(ngModel)]="hojavidas.hojavida_lugar" class="form-control"
+        required/>
+        <span *ngIf="!hojavida_lugar.valid && hojavida_lugar.touched">
+            No existe Ese Lugar che!!
+
+        </span>
+
+    </p>
+
+    <p>
+      <label for="title"> Cargo que Desempeño</label>
+      <input type="text" name="hojavida_cargo" #hojavida_cargo="ngModel" [(ngModel)]="hojavidas.hojavida_cargo" class="form-control"
+      required/>
+      <span *ngIf="!hojavida_cargo.valid && hojavida_cargo.touched">
+          ¿Cómo te desempeñaste?
+
+      </span>
+
+   </p>
+  </div>
+
+
+
+  <div class="col-lg-6" id="form_izq">
+    <p>
+      <label for="title">Inicio de su trabajo</label>
+      <input type="date" name="hojavida_fechaInicio" #hojavida_fechaInicio="ngModel" [(ngModel)]="hojavidas.hojavida_fechaInicio" class="form-control"
+      required/>
+      <span *ngIf="!hojavida_fechaInicio.valid && hojavida_fechaInicio.touched">
+          Ingrese Fecha!!
+
+      </span>
+
+   </p>
+   <p>
+      <label for="title">Fin de su trabajo</label>
+      <input type="date" name="hojavida_fechatermino" #hojavida_fechatermino="ngModel" [(ngModel)]="hojavidas.hojavida_fechatermino" class="form-control"
+      required/>
+      <span *ngIf="!hojavida_fechatermino.valid && hojavida_fechatermino.touched">
+       Ingrese Fecha!!
+
+      </span>
+
+   </p>
+
+  </div>
+
+
+  <div class="col-lg-12" id="form_button">
+    <p>
+       <label for="description"> Descripcion</label>
+       <textarea  name="description" #description="ngModel" [(ngModel)]="hojavidas.description" class="form-control"
+       required></textarea>
+       <span *ngIf="!description.valid && description.touched">
+           Descripción no válida
+
+       </span>
+
+    </p>
+
+    <p>
+       <label for="status">¿Sigue trabajando en la misma empresa?</label>
+       <select class="form-control" name="status" #status="ngModel"[(ngModel)]="hojavidas.status"required>
+           <option value="true" selected="select">Si</option>
+           <option value="false">No</option>
+       </select>
+
+    </p>
+    <input type="submit" value="Guardar" class="btn btn-success" [disabled]="!hojaNew.form.valid"  />
+
+
+  </div>
+
+
+
+</form>

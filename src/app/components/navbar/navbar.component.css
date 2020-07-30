@@ -1,0 +1,23 @@
+#navbar{
+  background: #982f46 !important;
+}
+
+#toggler{
+  background: transparent;
+}
+
+#toggler{
+  background-color: white;
+}
+
+.nav-link{
+  color: white !important;
+  height: 100%;
+}
+
+.nav-link:hover{
+  color: #982f46 !important;
+  background: white;
+}
+
+

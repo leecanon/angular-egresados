@@ -1,0 +1,83 @@
+<app-navbar></app-navbar>
+
+
+<div id="general">
+
+  <div class="col-lg-3" id="div_title">
+    <div id="div_title_text">
+      <div class="col-lg-12 col-md-4 col-sm-4" id="div_title_text_photo">
+        <h1>FOTO</h1><hr>
+      </div>
+      <div class="col-lg-12 col-md-8 col-sm-8" id="div_title_text_detail">
+        <h1>NOMBRES Y APELLIDOS</h1><hr>
+        <h1>CARRERA</h1><hr>
+        <h1>CÓDIGO</h1><hr>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="col-lg-9" id="div_content">
+
+    <ul class="nav nav-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" data-toggle="tab" href="#aeaea1">Datos Personales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aeaea2">Código</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aeaea3">Datos Universitarios</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aeaea4">Datos Laborales</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aeaea5">Añadir empleo</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="tab" href="#aeaea6">No sé xd</a>
+      </li>
+    </ul>
+    <div id="myTabContent" class="tab-content">
+      <div class="tab-pane fade active show" id="aeaea1">
+        <br>
+        <h2>Tus datos personales</h2><br>
+<!--
+        <h2>/crear-persona CARPETA person-new CELULAR Y DNI</h2>
+        <h2>/datos-alumno CARPETA alumno-new CODIGO</h2>
+        <h2>/ficha-egresado CARPETA fichaegreso-new CARRERA</h2>
+        <h2>/hoja-vida CARPETA hojavida-new TRABAJO</h2>
+-->
+        <app-profile-datos-personales></app-profile-datos-personales>
+      </div>
+      <div class="tab-pane fade" id="aeaea2">
+        <br>
+        <h2>Código</h2><br>
+        <app-profile-codigo></app-profile-codigo>
+      </div>
+      <div class="tab-pane fade" id="aeaea3">
+        <br>
+        <h2>Tus datos universitarios</h2><br>
+        <app-profile-datos-universitarios></app-profile-datos-universitarios>
+      </div>
+      <div class="tab-pane fade" id="aeaea4">
+        <br>
+        <h2>Tu lista de empleos que tuviste</h2><br>
+      </div>
+      <div class="tab-pane fade" id="aeaea5">
+        <br>
+        <h2>Añade una nueva experiencia laboral</h2><br>
+        <app-profile-datos-laborales></app-profile-datos-laborales>
+      </div>
+      <div class="tab-pane fade" id="aeaea6">
+        <br>
+        <h2>No sé qué poner aquí xd</h2><br>
+        <app-profile-datos-personales-lista></app-profile-datos-personales-lista>
+      </div>
+    </div>
+
+
+  </div>
+</div>
