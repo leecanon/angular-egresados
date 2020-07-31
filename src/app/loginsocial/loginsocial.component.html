@@ -1,0 +1,43 @@
+<main class="container mt-5">
+    <div class="row">
+        <div class="col-md-6">
+            
+            <div>
+               <button class="btn btn-danger btn-block" (click)= "signInWithGoogle()">
+                <i class="fa fa-google"></i>
+                Ingrese Con Google 
+                </button> 
+            </div>
+            <div>
+                <p>                     </p>
+            </div>
+            <div>
+                <button class="btn btn-info btn-block" (click)= "signInWithFB()">
+                <i class="fa fa-facebook"></i>
+                Ingrese Con Facebook 
+                </button>
+            </div>
+            <div>
+                <button clsass="btn btn-primary btn-block" (click)= "signOut()" *ngIf="user">
+                <i class="fa fa-sing-out"></i>
+                Salir
+            </button>
+            </div>
+            
+            
+
+        </div>
+        <div class="col-md-6" *ngIf="user" >
+            <img src="{{ user.photoUrl }}">
+            <div>
+            <h4>{{ user.name }}</h4>
+            <p>{{ user.email }}</p>
+            </div>
+        </div>
+    </div>
+
+
+</main>
+
+
+

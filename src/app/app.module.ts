@@ -31,6 +31,10 @@ import { ProfileDatosPersonalesListaComponent } from './components/profile-datos
 import { NavbarHomeComponent } from './components/navbar-home/navbar-home.component';
 
 
+// Modulos para login with google and facebook
+import { GoogleLoginProvider,FacebookLoginProvider, AmazonLoginProvider,} from 'angularx-social-login';
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import { LoginsocialComponent } from './loginsocial/loginsocial.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +60,8 @@ import { NavbarHomeComponent } from './components/navbar-home/navbar-home.compon
     ProfileDatosUniversitariosComponent,
     ProfileDatosPersonalesListaComponent,
     NavbarHomeComponent,
+    LoginComponent,
+    LoginsocialComponent
     //FormsModule
   ],
   imports: [
@@ -63,13 +69,35 @@ import { NavbarHomeComponent } from './components/navbar-home/navbar-home.compon
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
+    SocialLoginModule,
     DataTablesModule
 
 
 
   ],
   providers: [
-
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider('90925267398-od55tr4bti6a61q9k6i1eiqnnf42t62h.apps.googleusercontent.com'),
+          },
+          {
+            id: FacebookLoginProvider.PROVIDER_ID,
+            provider: new FacebookLoginProvider('224581158723359'),
+          },
+          {
+            id: AmazonLoginProvider.PROVIDER_ID,
+            provider: new AmazonLoginProvider(
+              'clientId'
+            ),
+          },
+        ],
+      } as SocialAuthServiceConfig,
+    }
   ],
   bootstrap: [AppComponent]
 })
